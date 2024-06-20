@@ -4,26 +4,47 @@ This project is a web application that allows users to input processes and their
 
 ## Table of Contents
 
-- [Backend Setup](#backend-setup)
-- [Frontend Setup](#frontend-setup)
-- [Running the Application](#running-the-application)
-- [Usage](#usage)
-- [How Flask Interacts with the C++ File](#how-flask-interacts-with-the-c-file)
+- [Project's Title](#projects-title)
+- [Project Description](#project-description)
+- [How to Run the Project](#how-to-run-the-project)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+  - [Running the Application](#running-the-application)
+- [The Internal Working of Your Project](#the-internal-working-of-your-project)
+  - [Explanation of C++ Scheduling Algorithms](#explanation-of-c-scheduling-algorithms)
+    - [FCFS (First-Come, First-Served)](#fcfs-first-come-first-served)
+    - [SJF (Shortest Job First)](#sjf-shortest-job-first)
+    - [RR (Round Robin)](#rr-round-robin)
+    - [SRTF (Shortest Remaining Time First)](#srtf-shortest-remaining-time-first)
+  - [Selection Algorithm](#selection-algorithm)
+  - [How Flask Interacts with the C++ File](#how-flask-interacts-with-the-c-file)
+- [Your Learning Takeaways from the Project](#your-learning-takeaways-from-the-project)
+- [Resources/References](#resourcesreferences)
 - [Contributing](#contributing)
 
 
-## Backend Setup
+## Project's Title
+
+CPU Scheduler Simulation
+
+## Project Description
+
+This project simulates various CPU scheduling algorithms using a combination of C++ for backend processing and a modern web frontend built with React and Vite. Users can input processes, including their arrival and burst times, and visualize the scheduling results through charts and tables.
+
+## How to Run the Project
+
+### Backend Setup
 
 The backend is built using Flask and handles the processing of scheduling algorithms written in C++.
 
-### Prerequisites
+#### Prerequisites
 
 - Python 3.x
 - Flask
 - Flask-CORS
 - g++ (GNU Compiler Collection)
 
-### Installation
+#### Installation
 
 1. Navigate to the `backend` folder:
     ```bash
@@ -41,7 +62,7 @@ The backend is built using Flask and handles the processing of scheduling algori
     pip install Flask Flask-CORS
     ```
 
-### Running the Backend
+#### Running the Backend
 
 1. Ensure you are in the `backend` directory with the virtual environment activated.
 2. Start the Flask server:
@@ -51,20 +72,20 @@ The backend is built using Flask and handles the processing of scheduling algori
 
 The backend server should now be running on `http://localhost:8080`.
 
-### Endpoints
+#### Endpoints
 
 - `POST /submit`: Accepts CPU scheduling input data and returns the scheduling results.
 
-## Frontend Setup
+### Frontend Setup
 
 The frontend is built using React and communicates with the backend to display the results of the scheduling algorithms.
 
-### Prerequisites
+#### Prerequisites
 
 - Node.js
 - npm (Node Package Manager)
 
-### Installation
+#### Installation
 
 1. Navigate to the `frontend` folder:
     ```bash
@@ -76,7 +97,7 @@ The frontend is built using React and communicates with the backend to display t
     npm install
     ```
 
-### Running the Frontend
+#### Running the Frontend
 
 1. Ensure you are in the `frontend` directory.
 2. Run the Vite development server:
@@ -86,7 +107,7 @@ The frontend is built using React and communicates with the backend to display t
 
 The frontend should now be running and accessible at the address provided in the terminal output, typically `http://localhost:3000`.
 
-## Running the Application
+### Running the Application
 
 1. Start the backend server as described in the [Backend Setup](#backend-setup) section.
 2. Start the frontend server as described in the [Frontend Setup](#frontend-setup) section.
@@ -102,6 +123,46 @@ The frontend should now be running and accessible at the address provided in the
    - Comparison of average waiting time and average turnaround time
    - Optimal scheduling algorithm based on the given inputs
    - Statistical data such as standard deviation and averages of burst and arrival times.
+
+## The Internal Working of Your Project
+
+### Explanation of C++ Scheduling Algorithms
+
+#### FCFS (First-Come, First-Served)
+
+- Processes are executed in the order they arrive.
+- Simple and easy to implement, but can suffer from the "convoy effect" where short processes wait for long processes to complete.
+
+#### SJF (Shortest Job First)
+
+- Processes with the shortest burst time are executed first.
+- Optimal for minimizing waiting time but requires precise knowledge of burst times, which isn't always possible.
+
+#### RR (Round Robin)
+
+- Each process is assigned a fixed time quantum.
+- Processes are executed in a cyclic order.
+- Provides fair time-sharing but can suffer from high context-switching overhead if the time quantum is too small.
+
+#### SRTF (Shortest Remaining Time First)
+
+- Preemptive version of SJF where the process with the shortest remaining burst time is executed next.
+- Minimizes waiting time for shorter processes arriving later.
+
+### Selection Algorithm
+
+- **FCFS (First-Come, First-Served)**:
+  - If the standard deviation of arrival times is greater than 50% of the average burst time, FCFS is recommended as it benefits processes arriving early.
+  
+- **SJF (Shortest Job First)**:
+  - If the standard deviation of burst times is less than 50% of the average burst time, SJF minimizes waiting time by executing shorter jobs first.
+
+- **RR (Round Robin)**:
+  - If the standard deviation of burst times is between 50% and 100% of the average burst time, RR ensures fair time distribution. The time quantum is set to 80% of the average burst time.
+
+- **SRTF (Shortest Remaining Time First)**:
+  - If none of the above conditions are met, SRTF benefits from preemptive scheduling to minimize waiting time by executing shorter processes arriving later.
+
 
 ### How Flask Interacts with the C++ File
 
@@ -120,19 +181,30 @@ The frontend should now be running and accessible at the address provided in the
 4. **Returning Output**:
    - Flask reads the `output.json` file and returns the results as a JSON response.
 
-### Predicted Algorithm Explanation
+## My Learning Takeaways from the Project
 
-- **FCFS (First-Come, First-Served)**:
-  - If the standard deviation of arrival times is greater than 50% of the average burst time, FCFS is recommended as it benefits processes arriving early.
+- **Understanding of Scheduling Algorithms**: Explored different CPU scheduling algorithms such as FCFS, SJF, RR, and SRTF, understanding their strengths and weaknesses.
   
-- **SJF (Shortest Job First)**:
-  - If the standard deviation of burst times is less than 50% of the average burst time, SJF minimizes waiting time by executing shorter jobs first.
+- **Integration of Backend and Frontend**: Learned how to integrate a Flask backend with a React frontend, handling data flow and communication between different components.
+  
+- **Algorithm Selection Logic**: Developed a selection algorithm based on statistical analysis of input data, optimizing the choice of scheduling algorithm dynamically.
+  
+- **Hands-on with C++ Integration**: Gained practical experience in integrating C++ programs within a web application context, managing file interactions and subprocess execution.
+  
+- **Software Engineering Best Practices**: Practiced good software engineering principles such as modular design, version control with Git, and collaborative development through contributions.
 
-- **RR (Round Robin)**:
-  - If the standard deviation of burst times is between 50% and 100% of the average burst time, RR ensures fair time distribution. The time quantum is set to 80% of the average burst time.
 
-- **SRTF (Shortest Remaining Time First)**:
-  - If none of the above conditions are met, SRTF benefits from preemptive scheduling to minimize waiting time by executing shorter processes arriving later.
+## Resources/References
+
+- **CPU Scheduling Algorithms**:
+  - Operating System Concepts by Abraham Silberschatz, Peter Baer Galvin, and Greg Gagne
+  - GeeksforGeeks articles on CPU Scheduling
+- **Flask Documentation**: https://flask.palletsprojects.com/
+- **React Documentation**: https://reactjs.org/docs/getting-started.html
+- **Vite Documentation**: https://vitejs.dev/guide/
+- **C++ Reference**: http://www.cplusplus.com/reference/
+- **Chart.js Documentation**: https://www.chartjs.org/docs/latest/
+- **TutorialsPoint C++ Programming**: https://www.tutorialspoint.com/cplusplus/index.htm
 
 ## Contributing
 
