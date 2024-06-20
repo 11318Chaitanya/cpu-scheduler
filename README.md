@@ -5,10 +5,10 @@ This project is a web application that allows users to input processes and their
 ## Table of Contents
 
 - [Backend Setup](#backend-setup)
-- [How Flask Interacts with the C++ File](#backend-interaction)
 - [Frontend Setup](#frontend-setup)
 - [Running the Application](#running-the-application)
 - [Usage](#usage)
+- [How Flask Interacts with the C++ File](#how-flask-interacts-with-the-c-file)
 - [Contributing](#contributing)
 
 
@@ -55,23 +55,6 @@ The backend server should now be running on `http://localhost:8080`.
 
 - `POST /submit`: Accepts CPU scheduling input data and returns the scheduling results.
 
-### How Flask Interacts with the C++ File
-
-1. **Receiving Input**:
-   - The Flask app receives input data via a `POST` request to the `/submit` endpoint.
-   - The input data, which includes the processes and the time quantum, is parsed and saved to a file named `input.txt`.
-
-2. **Compiling the C++ Program**:
-   - Flask runs a subprocess command to compile the `main.cpp` file using `g++`.
-   - If the compilation fails, an error message is returned.
-
-3. **Executing the Compiled Program**:
-   - Upon successful compilation, Flask runs the compiled C++ program.
-   - The C++ program reads the `input.txt` file, processes the data, and writes the scheduling results to `output.json`.
-
-4. **Returning Output**:
-   - Flask reads the `output.json` file and returns the results as a JSON response.
-
 ## Frontend Setup
 
 The frontend is built using React and communicates with the backend to display the results of the scheduling algorithms.
@@ -107,7 +90,7 @@ The frontend should now be running and accessible at the address provided in the
 
 1. Start the backend server as described in the [Backend Setup](#backend-setup) section.
 2. Start the frontend server as described in the [Frontend Setup](#frontend-setup) section.
-3. Open your web browser and navigate to `http://localhost:3000`.
+3. Open your web browser and navigate to the address provided in the terminal output.
 
 ## Usage
 
@@ -119,6 +102,23 @@ The frontend should now be running and accessible at the address provided in the
    - Comparison of average waiting time and average turnaround time
    - Optimal scheduling algorithm based on the given inputs
    - Statistical data such as standard deviation and averages of burst and arrival times.
+
+### How Flask Interacts with the C++ File
+
+1. **Receiving Input**:
+   - The Flask app receives input data via a `POST` request to the `/submit` endpoint.
+   - The input data, which includes the processes and the time quantum, is parsed and saved to a file named `input.txt`.
+
+2. **Compiling the C++ Program**:
+   - Flask runs a subprocess command to compile the `main.cpp` file using `g++`.
+   - If the compilation fails, an error message is returned.
+
+3. **Executing the Compiled Program**:
+   - Upon successful compilation, Flask runs the compiled C++ program.
+   - The C++ program reads the `input.txt` file, processes the data, and writes the scheduling results to `output.json`.
+
+4. **Returning Output**:
+   - Flask reads the `output.json` file and returns the results as a JSON response.
 
 ### Predicted Algorithm Explanation
 
