@@ -1,0 +1,354 @@
+{
+    "average_at": 0.0,
+    "average_bt": 5.0,
+    "data": {
+        "0": {
+            "average_turnaround_time": 15.199999809265137,
+            "average_waiting_time": 10.199999809265137,
+            "processes": [
+                {
+                    "arrival_time": 0,
+                    "burst_time": 6,
+                    "completion_time": 6,
+                    "gantt_chart": [
+                        {
+                            "end_time": 6,
+                            "start_time": 0
+                        }
+                    ],
+                    "pid": 1,
+                    "turnaround_time": 6,
+                    "waiting_time": 0
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 4,
+                    "completion_time": 10,
+                    "gantt_chart": [
+                        {
+                            "end_time": 10,
+                            "start_time": 6
+                        }
+                    ],
+                    "pid": 2,
+                    "turnaround_time": 10,
+                    "waiting_time": 6
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 15,
+                    "gantt_chart": [
+                        {
+                            "end_time": 15,
+                            "start_time": 10
+                        }
+                    ],
+                    "pid": 3,
+                    "turnaround_time": 15,
+                    "waiting_time": 10
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 20,
+                    "gantt_chart": [
+                        {
+                            "end_time": 20,
+                            "start_time": 15
+                        }
+                    ],
+                    "pid": 4,
+                    "turnaround_time": 20,
+                    "waiting_time": 15
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 25,
+                    "gantt_chart": [
+                        {
+                            "end_time": 25,
+                            "start_time": 20
+                        }
+                    ],
+                    "pid": 5,
+                    "turnaround_time": 25,
+                    "waiting_time": 20
+                }
+            ],
+            "scheduler_name": "FCFS"
+        },
+        "1": {
+            "average_turnaround_time": 21.600000381469727,
+            "average_waiting_time": 16.600000381469727,
+            "processes": [
+                {
+                    "arrival_time": 0,
+                    "burst_time": 6,
+                    "completion_time": 22,
+                    "gantt_chart": [
+                        {
+                            "end_time": 2,
+                            "start_time": 0
+                        },
+                        {
+                            "end_time": 12,
+                            "start_time": 10
+                        },
+                        {
+                            "end_time": 22,
+                            "start_time": 20
+                        }
+                    ],
+                    "pid": 1,
+                    "turnaround_time": 22,
+                    "waiting_time": 16
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 4,
+                    "completion_time": 14,
+                    "gantt_chart": [
+                        {
+                            "end_time": 4,
+                            "start_time": 2
+                        },
+                        {
+                            "end_time": 14,
+                            "start_time": 12
+                        }
+                    ],
+                    "pid": 2,
+                    "turnaround_time": 14,
+                    "waiting_time": 10
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 23,
+                    "gantt_chart": [
+                        {
+                            "end_time": 6,
+                            "start_time": 4
+                        },
+                        {
+                            "end_time": 16,
+                            "start_time": 14
+                        },
+                        {
+                            "end_time": 23,
+                            "start_time": 22
+                        }
+                    ],
+                    "pid": 3,
+                    "turnaround_time": 23,
+                    "waiting_time": 18
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 24,
+                    "gantt_chart": [
+                        {
+                            "end_time": 8,
+                            "start_time": 6
+                        },
+                        {
+                            "end_time": 18,
+                            "start_time": 16
+                        },
+                        {
+                            "end_time": 24,
+                            "start_time": 23
+                        }
+                    ],
+                    "pid": 4,
+                    "turnaround_time": 24,
+                    "waiting_time": 19
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 25,
+                    "gantt_chart": [
+                        {
+                            "end_time": 10,
+                            "start_time": 8
+                        },
+                        {
+                            "end_time": 20,
+                            "start_time": 18
+                        },
+                        {
+                            "end_time": 25,
+                            "start_time": 24
+                        }
+                    ],
+                    "pid": 5,
+                    "turnaround_time": 25,
+                    "waiting_time": 20
+                }
+            ],
+            "scheduler_name": "RR"
+        },
+        "2": {
+            "average_turnaround_time": 14.199999809265137,
+            "average_waiting_time": 9.199999809265137,
+            "processes": [
+                {
+                    "arrival_time": 0,
+                    "burst_time": 6,
+                    "completion_time": 25,
+                    "gantt_chart": [
+                        {
+                            "end_time": 25,
+                            "start_time": 19
+                        }
+                    ],
+                    "pid": 1,
+                    "turnaround_time": 25,
+                    "waiting_time": 19
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 4,
+                    "completion_time": 4,
+                    "gantt_chart": [
+                        {
+                            "end_time": 4,
+                            "start_time": 0
+                        }
+                    ],
+                    "pid": 2,
+                    "turnaround_time": 4,
+                    "waiting_time": 0
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 9,
+                    "gantt_chart": [
+                        {
+                            "end_time": 9,
+                            "start_time": 4
+                        }
+                    ],
+                    "pid": 3,
+                    "turnaround_time": 9,
+                    "waiting_time": 4
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 14,
+                    "gantt_chart": [
+                        {
+                            "end_time": 14,
+                            "start_time": 9
+                        }
+                    ],
+                    "pid": 4,
+                    "turnaround_time": 14,
+                    "waiting_time": 9
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 19,
+                    "gantt_chart": [
+                        {
+                            "end_time": 19,
+                            "start_time": 14
+                        }
+                    ],
+                    "pid": 5,
+                    "turnaround_time": 19,
+                    "waiting_time": 14
+                }
+            ],
+            "scheduler_name": "SJF"
+        },
+        "3": {
+            "average_turnaround_time": 14.199999809265137,
+            "average_waiting_time": 9.199999809265137,
+            "processes": [
+                {
+                    "arrival_time": 0,
+                    "burst_time": 6,
+                    "completion_time": 25,
+                    "gantt_chart": [
+                        {
+                            "end_time": 25,
+                            "start_time": 19
+                        }
+                    ],
+                    "pid": 1,
+                    "turnaround_time": 25,
+                    "waiting_time": 19
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 4,
+                    "completion_time": 4,
+                    "gantt_chart": [
+                        {
+                            "end_time": 4,
+                            "start_time": 0
+                        }
+                    ],
+                    "pid": 2,
+                    "turnaround_time": 4,
+                    "waiting_time": 0
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 9,
+                    "gantt_chart": [
+                        {
+                            "end_time": 9,
+                            "start_time": 4
+                        }
+                    ],
+                    "pid": 3,
+                    "turnaround_time": 9,
+                    "waiting_time": 4
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 14,
+                    "gantt_chart": [
+                        {
+                            "end_time": 14,
+                            "start_time": 9
+                        }
+                    ],
+                    "pid": 4,
+                    "turnaround_time": 14,
+                    "waiting_time": 9
+                },
+                {
+                    "arrival_time": 0,
+                    "burst_time": 5,
+                    "completion_time": 19,
+                    "gantt_chart": [
+                        {
+                            "end_time": 19,
+                            "start_time": 14
+                        }
+                    ],
+                    "pid": 5,
+                    "turnaround_time": 19,
+                    "waiting_time": 14
+                }
+            ],
+            "scheduler_name": "SRTF"
+        }
+    },
+    "predicted_algo": "SJF",
+    "standard_deviation_at": 0.0,
+    "standard_deviation_bt": 0.6324555277824402,
+    "time_quantum": 2
+}
